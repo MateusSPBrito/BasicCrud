@@ -1,0 +1,26 @@
+<h2>Elements</h2>
+<form>
+    <p>Name: <input type="text" name="name" [(ngModel)]="element.name"></p>
+    <p>Weight: <input type="text" name="weight" [(ngModel)]="element.weight"></p>
+    <p>Symbol: <input type="text" name="symbol" [(ngModel)]="element.symbol"></p>
+    <button type="button" (click)="creatElement()">Creat</button>
+</form>
+<table>
+    <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Symbol</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let element of elements">
+        <td>{{element.id}}</td>
+        <td>{{element.name}}</td>
+        <td>{{element.weight}}</td>
+        <td>{{element.symbol}}</td>
+        <td>
+            <button (click)="updateElement(element.id)">Update</button>
+            <button (click)="deleteElement(element.id)">Delete</button>
+        </td>
+    </tr>
+</table>
